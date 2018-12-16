@@ -2,58 +2,144 @@ package model;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UrlParser {
+    // этот класс отвечает за парсинг страниц, он ищет ссылки и eмайлы на странице и всех её "дочерних" страницах
 
-    // этот класс отвечает за парсинг страниц, он же проверяет собранные мейлы через класс-помощник
+    public static String mainUrl = null;
+    public static List<String> urls = new ArrayList();
+    public static List<String> emails = new ArrayList();
 
-    List<String> urls = new ArrayList();
-
-    public UrlParser(String ... urls) {
+    public UrlParser(String url) {
+        mainUrl = checkUrl(url);
     }
 
-    public UrlParser() {
-    }
-
-    public List getUrls() {
-        return urls;
-    }
-
-    public void setUrls(List urls) {
-        this.urls = urls;
+    public static void startParse(String url) {
+        mainUrl = checkUrl(url);
+        getUrls();
+        getEmails();
     }
 
 
-    public static List<String> getEmails(String str) throws IOException {
+    // этот метод любую "основную" ссылку (введенную пользователем) приводит к домашней странице, чтобы обеспечить
+    // в дальнейшем корректную работу с подразделами и в любом случае начинать поиск ссылок с домашней страницы
+    // например http://www.vodokanal.spb.ru/o_kompanii/kontakty/
+    // превращается в http://www.vodokanal.spb.ru
+    private static String checkUrl(String str) {
 
-        Document doc = Jsoup.connect(str).get();
+        Pattern pattern = Pattern.compile("^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$");
+        Matcher matcher = pattern.matcher(str);
 
-        List<String> emails = new ArrayList<String>();
-        Matcher m = Pattern.compile("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+").matcher(doc.toString());
+        if (matcher.find()) {
+            URL url = null;
+            try {
+                url = new URL(str);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
 
-        while (m.find()) {
+            System.out.println("Основная ссылка корректна. Вывожу дочерние ссылки... \n");
+            return url.getProtocol() + "://" + url.getHost();
 
-            String mail = m.group();
-//            System.out.println(mail);
+        } else {
+            System.out.println("Введена некорректная ссылка");
+        }
 
-            if (!emails.contains(mail)) {
-                emails.add(mail);
+        return null;
+    }
+
+
+    // этот метод ищет любые ссылки на web-странице
+    private static List<String> getUrls(){
+
+        Element body = null;
+        try {
+            Document doc = Jsoup.connect(mainUrl).get();
+            body = doc.body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Elements elements = body.getElementsByTag("a");
+
+        for(Element url : elements) {
+            String href = url.attr("href");
+
+            // если ссылка начинается с "/" - добавляем к ней доменное имя и забираем в список
+            if (href.startsWith("/")) {
+                href = mainUrl + href;
+                urls.add(href);
+
+                // если c любого другого символа - проверяем корректность по регулярке и забираем в список
+            } else if (href.startsWith("http")) {
+                Pattern pattern = Pattern.compile("^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$");
+                Matcher matcher = pattern.matcher(mainUrl);
+
+                if (matcher.matches()) {
+                    urls.add(href);
+                }
             }
         }
 
-//        System.out.println("---------------------");
+        // удаляем дубликаты, если они есть
+        Set set = new LinkedHashSet(urls);
+        urls = new ArrayList<String>(set);
 
-        for (String string : emails) {
-            System.out.println(string);
+        for (String s : urls) {
+            System.out.println(s);
         }
 
+        return urls;
+    }
+
+
+    // здесь собираем все емайлы на переданной в метод странице и складываем их в список
+    private static List<String> getEmails() {
+
+        System.out.println("\nСобираю почтовые адреса...\n");
+
+        for (String str : urls) {
+
+            try {
+                Document doc = Jsoup.connect(str).get();
+                Matcher m = Pattern.compile("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+").matcher(doc.toString());
+
+                while (m.find()) {
+
+                    String mail = m.group();
+
+                    if (!emails.contains(mail)) {
+                        emails.add(mail);
+                    }
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // удаляем дубликаты, если они есть
+        Set set = new LinkedHashSet(emails);
+        emails = new ArrayList<String>(set);
         return emails;
+    }
+
+    public static void showEmails() {
+        for (String str : emails) {
+            System.out.println(str);
+        }
     }
 }
 

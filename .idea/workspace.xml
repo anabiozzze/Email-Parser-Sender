@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="268629d5-9d09-49e0-b7f2-a75163c8598d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ParserSpamer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/sdfsdsf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/HtmlParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/MailVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/emails/MailCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/emails/MailSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/sfsfgsr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controller/sdfsdsf.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/HtmlParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/MailVerifier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/emails/MailCreator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/emails/MailSender.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/sfsfgsr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/UrlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/UrlParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/HtmlParser.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,26 +26,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1512" />
+          <entry key="dummy" value="2" />
+          <entry key="java" value="3933" />
           <entry key="xml" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1512" />
+          <entry key="JAVA" value="3933" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="10" />
+          <entry key="java" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="10" />
+          <entry key="JAVA" value="11" />
         </counts>
       </usages-collector>
     </session>
@@ -95,13 +81,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="45">
+              <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/UrlParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2044">
+              <caret line="146" column="3" lean-forward="true" selection-start-line="146" selection-start-column="3" selection-end-line="146" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#729#730#0" expanded="true" />
+                <element signature="e#768#769#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,55 +107,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="126">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/emails/MailSender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/emails/MailCreator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/HtmlParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#346#347#0" expanded="true" />
-                <element signature="e#374#375#0" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#448#449#0" expanded="true" />
-                <element signature="e#704#712#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/MailVerifier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="102" selection-start-line="4" selection-start-column="102" selection-end-line="4" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -174,6 +127,9 @@
     </option>
   </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>System.out.println</find>
+    </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/java</dir>
     </dirStrings>
@@ -188,9 +144,10 @@
         <option value="$PROJECT_DIR$/src/main/java/model/MailVerifier.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/emails/MailCreator.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/emails/MailSender.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/HtmlParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/UrlParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
       </list>
     </option>
   </component>
@@ -293,7 +250,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544971485642" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544986724640" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -310,7 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ParserSpamer" />
@@ -318,9 +275,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="ParserSpamer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Test" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -334,15 +303,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544643993205</updated>
-      <workItem from="1544643998612" duration="6977000" />
+      <workItem from="1544643998612" duration="17287000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6977000" />
+    <option name="totallyTimeSpent" value="17287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="813" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -354,11 +324,11 @@
       <window_info anchor="bottom" id="Messages" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3295129" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3295129" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295129" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295129" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -395,27 +365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/sdfsdsf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/emails/MailCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/emails/MailSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar!/org/jsoup/Connection.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
@@ -437,6 +386,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/emails/MailCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/emails/MailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/sfsfgsr.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -444,38 +417,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/sdfsdsf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/UrlParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2044">
+          <caret line="146" column="3" lean-forward="true" selection-start-line="146" selection-start-column="3" selection-end-line="146" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/HtmlParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#704#712#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
         </state>
       </provider>
     </entry>
