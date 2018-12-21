@@ -93,8 +93,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-12-20.22:44:17.036</IntrospectionTimestamp>
-      <IntrospectionStateNumber>577</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-12-21.22:32:05.552</IntrospectionTimestamp>
+      <IntrospectionStateNumber>589</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -153,7 +153,7 @@
       <ObjectId>16385</ObjectId>
       <Comment>all emails and status of delivery</Comment>
       <Owner>postgres</Owner>
-      <StateNumber>574</StateNumber>
+      <StateNumber>587</StateNumber>
     </table>
     <column id="27" parent="26" name="email">
       <Position>1</Position>
@@ -166,7 +166,7 @@
       <Position>2</Position>
       <DataType>char|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>572</StateNumber>
+      <StateNumber>589</StateNumber>
       <TypeId>1042</TypeId>
     </column>
     <column id="29" parent="26" name="date">
@@ -185,17 +185,24 @@
       <TypeId>23</TypeId>
       <SequenceName>contacts_id_seq</SequenceName>
     </column>
-    <index id="31" parent="26" name="contacts_id_uindex">
+    <column id="31" parent="26" name="url">
+      <Position>5</Position>
+      <DataType>char|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>587</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <index id="32" parent="26" name="contacts_id_uindex">
       <ObjectId>16394</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="32" parent="26" name="contacts_pk">
+    <index id="33" parent="26" name="contacts_pk">
       <ObjectId>16395</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="33" parent="26" name="contacts_pk">
+    <key id="34" parent="26" name="contacts_pk">
       <ObjectId>16396</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>contacts_pk</UnderlyingIndexName>

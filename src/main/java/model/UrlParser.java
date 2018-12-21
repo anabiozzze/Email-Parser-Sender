@@ -1,5 +1,6 @@
 package model;
 
+import model.emails.classes4hibernate.Email;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -8,22 +9,27 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 
 public class UrlParser {
     // этот класс отвечает за парсинг страниц, он ищет ссылки и eмайлы на странице и всех её "дочерних" страницах
 
     public static String mainUrl = null;
+    public static int delRepeats;
+
+    // дочерние ссылки, найденные парсером на изначальной странице
     public static List<String> urls = new ArrayList();
-    public static List<String> emails = new ArrayList();
+    // найденные на странице почтовые адреса
+    public static List<Email> emails = new ArrayList();
 
     public UrlParser(String url) {
         mainUrl = checkUrl(url);
+    }
+
+    public UrlParser() {
     }
 
     public static void startParse(String url) {
@@ -105,11 +111,12 @@ public class UrlParser {
     }
 
 
-    // здесь собираем все емайлы на переданной в метод странице и складываем их в список
-    private static List<String> getEmails() {
+    // здесь собираем все емайлы из основной страницы и её дочерних ссылок и складываем мэйлы в список
+    private static List<Email> getEmails() {
 
         System.out.println("\nСобираю почтовые адреса...\n");
 
+        // проходимся по всем найденным на странице ссылкам...
         for (String str : urls) {
 
             try {
@@ -119,26 +126,38 @@ public class UrlParser {
                 while (m.find()) {
 
                     String mail = m.group();
-
-                    if (!emails.contains(mail)) {
-                        emails.add(mail);
-                    }
+                    emails.add(new Email(mail, mainUrl));
                 }
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            // удаляем дубликаты, если они есть
+            deleteRepeats();
         }
 
-        // удаляем дубликаты, если они есть
-        Set set = new LinkedHashSet(emails);
-        emails = new ArrayList<String>(set);
+        System.out.println("Удалено " + delRepeats + " повторов.\n");
         return emails;
     }
 
     public static void showEmails() {
-        for (String str : emails) {
-            System.out.println(str);
+            for (Email eml : emails) {
+            System.out.println(eml.getAddress());
+        }
+    }
+
+    // метод ищет дубликаты емэйлов в соответсвующем списке и удаляет их
+    public static void deleteRepeats() {
+        for (int i=0; i<emails.size(); i++) {
+            for (int j = i+1; j<emails.size(); j++) {
+
+                if (emails.get(i).getAddress().equals(emails.get(j).getAddress())) {
+                    emails.remove(j);
+                    delRepeats++;
+
+                }
+            }
         }
     }
 }

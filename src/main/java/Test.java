@@ -10,22 +10,7 @@ public class Test {
     public static String mainUrl = "http://www.vodokanal.spb.ru/o_kompanii/kontakty/";
 
     public static void main(String[] args) {
-
-
-        try {
-            Document doc = Jsoup.connect(mainUrl).get();
-            Matcher m = Pattern.compile("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+").matcher(doc.toString());
-
-            while (m.find()) {
-
-                System.out.println(11212);
-                String mail = m.group();
-
-                System.out.println(mail);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println("Pahomova_YG@vodokanal.spb.ru"=="Pahomova_YG@vodokanal.spb.ru");
     }
 }
 
