@@ -1,5 +1,6 @@
 package model;
 
+import controller.EmailService;
 import model.emails.classes4hibernate.Email;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -18,6 +19,8 @@ public class UrlParser {
 
     public static String mainUrl = null;
     public static int delRepeats;
+
+    private static EmailService service = new EmailService();
 
     // дочерние ссылки, найденные парсером на изначальной странице
     public static List<String> urls = new ArrayList();
@@ -122,10 +125,13 @@ public class UrlParser {
                 Document doc = Jsoup.connect(str).get();
                 Matcher m = Pattern.compile("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+").matcher(doc.toString());
 
+                // если нашли емайл - кладем его в список и сразу в БД
+                // класс емайла сам поставит ему соответствующй статус и дату создания
                 while (m.find()) {
 
                     String mail = m.group();
-                    emails.add(new Email(mail, mainUrl));
+                    Email email = new Email(mail, mainUrl);
+                    emails.add(email);
                 }
 
             } catch (IOException e) {
@@ -137,6 +143,7 @@ public class UrlParser {
         }
 
         System.out.println("Удалено " + delRepeats + " повторов.\n");
+        uploadToDB(emails);
         return emails;
     }
 
@@ -158,6 +165,16 @@ public class UrlParser {
                 }
             }
         }
+    }
+
+    public static void uploadToDB(List<Email> emails) {
+        System.out.println("\nЗагружаю почтовые адреса в базу данных...");
+
+        for (Email eml : emails) {
+            service.saveEntry(eml);
+        }
+
+        System.out.println("\nЗагрузка завершена.");
     }
 }
 

@@ -6,7 +6,7 @@ public class Main {
     /*
      * view - GUI программы, анимация ожидания
      * model - парсинг страниц, проверка мейлов, сбор мейлов в БД, формирование писем, логгер
-     * controller - взаимодействие GUI и всего прочего
+     * controller - DAO, взаимодействие GUI и всего прочего
      * */
 
     public static void main(String[] args) {
