@@ -13,7 +13,6 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class UrlParser {
     // этот класс отвечает за парсинг страниц, он ищет ссылки и eмайлы на странице и всех её "дочерних" страницах
 

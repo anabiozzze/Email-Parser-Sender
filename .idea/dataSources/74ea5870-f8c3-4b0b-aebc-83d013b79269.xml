@@ -93,8 +93,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-12-21.22:32:05.552</IntrospectionTimestamp>
-      <IntrospectionStateNumber>589</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-12-22.21:28:45.896</IntrospectionTimestamp>
+      <IntrospectionStateNumber>598</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -153,21 +153,21 @@
       <ObjectId>16385</ObjectId>
       <Comment>all emails and status of delivery</Comment>
       <Owner>postgres</Owner>
-      <StateNumber>587</StateNumber>
+      <StateNumber>595</StateNumber>
     </table>
     <column id="27" parent="26" name="email">
       <Position>1</Position>
-      <DataType>char|0s</DataType>
+      <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>571</StateNumber>
-      <TypeId>1042</TypeId>
+      <StateNumber>590</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="28" parent="26" name="status">
       <Position>2</Position>
-      <DataType>char|0s</DataType>
+      <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>589</StateNumber>
-      <TypeId>1042</TypeId>
+      <StateNumber>598</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="29" parent="26" name="date">
       <Position>3</Position>
@@ -187,10 +187,10 @@
     </column>
     <column id="31" parent="26" name="url">
       <Position>5</Position>
-      <DataType>char|0s</DataType>
+      <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>587</StateNumber>
-      <TypeId>1042</TypeId>
+      <StateNumber>591</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <index id="32" parent="26" name="contacts_id_uindex">
       <ObjectId>16394</ObjectId>

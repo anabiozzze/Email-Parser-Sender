@@ -1,3 +1,5 @@
+package controller;
+
 import model.emails.classes4hibernate.Email;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;

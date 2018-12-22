@@ -28,6 +28,7 @@ public class Email {
         this.address = address;
         this.url = url;
         this.date = new Date();
+        this.status = EmailStatus.New;
 
     }
 
@@ -48,5 +49,13 @@ public class Email {
 
     public Date getDate() {
         return date;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
