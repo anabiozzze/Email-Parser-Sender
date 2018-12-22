@@ -1,4 +1,4 @@
-package controller;
+package controller.dao;
 
 import model.emails.classes4hibernate.Email;
 import org.hibernate.SessionFactory;

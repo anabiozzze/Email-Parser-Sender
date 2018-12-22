@@ -1,24 +1,25 @@
-import controller.DAOImpl;
+import controller.EmailService;
+import controller.dao.DAOImpl;
 import model.emails.classes4hibernate.Email;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Test {
     public static String mainUrl = "http://www.vodokanal.spb.ru/o_kompanii/kontakty/";
 
     public static void main(String[] args) {
 
-        DAOImpl dao = new DAOImpl();
-
-        List<Email> emls = dao.getAll();
-        for (Email eml:emls
-             ) {
-            System.out.println(eml.getAddress()+" :" + eml.getAddress());
-        }
+        EmailService service = new EmailService();
+        service.delAll();
 
 
+//        DAOImpl dao = new DAOImpl();
+//
+//        List<Email> emls = dao.getAll();
+//        for (Email eml:emls
+//             ) {
+//            System.out.println(eml.getAddress()+" :" + eml.getAddress());
+//        }
 
 
 //        List<String> emls = dao.getEmailsByUrl("1111wdwwdawdawd.com");

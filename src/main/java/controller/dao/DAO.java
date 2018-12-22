@@ -1,4 +1,4 @@
-package controller;
+package controller.dao;
 
 import model.emails.classes4hibernate.Email;
 
@@ -11,9 +11,9 @@ public interface DAO {
 
     public void updateEntry(Email email);
 
-    public void delEmail(Email email);
+    public void delEntry(Email email);
 
-    public void delEmail(int id);
+    public void delEntry(int id);
 
     public String getEmail(int id);
 

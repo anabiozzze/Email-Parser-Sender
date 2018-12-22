@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UrlParser {
-    // этот класс отвечает за парсинг страниц, он ищет ссылки и eмайлы на странице и всех её "дочерних" страницах
+    // этот класс отвечает за парсинг страниц, он ищет ссылки и eмэйлы на странице и всех её "дочерних" страницах
 
     public static String mainUrl = null;
     public static int delRepeats;

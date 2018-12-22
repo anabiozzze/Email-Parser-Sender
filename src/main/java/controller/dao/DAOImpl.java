@@ -1,4 +1,4 @@
-package controller;
+package controller.dao;
 
 import model.emails.classes4hibernate.Email;
 import org.hibernate.Session;
@@ -33,7 +33,7 @@ public class DAOImpl implements DAO {
     }
 
     // удаляем строку из БД по почтовому адресу
-    public void delEmail(Email email) {
+    public void delEntry(Email email) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         session.delete(email);
@@ -43,7 +43,7 @@ public class DAOImpl implements DAO {
     }
 
     // удаляем строку из БД по номеру записи
-    public void delEmail(int id) {
+    public void delEntry(int id) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         session.delete(session.get(Email.class, id));
