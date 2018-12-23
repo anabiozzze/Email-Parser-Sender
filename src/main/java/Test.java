@@ -1,5 +1,6 @@
 import controller.EmailService;
 import controller.dao.DAOImpl;
+import model.emails.MailCreator;
 import model.emails.classes4hibernate.Email;
 
 import java.util.List;
@@ -9,8 +10,13 @@ public class Test {
 
     public static void main(String[] args) {
 
-        EmailService service = new EmailService();
-        service.delAll();
+        MailCreator creator = new MailCreator();
+        creator.makeAndSend();
+
+
+
+//        EmailService service = new EmailService();
+//        service.delAll();
 
 
 //        DAOImpl dao = new DAOImpl();
