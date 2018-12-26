@@ -47,6 +47,10 @@ public class Email {
         return status;
     }
 
+    public void setStatus(EmailStatus status) {
+        this.status = status;
+    }
+
     public Date getDate() {
         return date;
     }

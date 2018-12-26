@@ -1,5 +1,8 @@
 package model.emails;
 
+import model.emails.classes4hibernate.Email;
+import model.emails.classes4hibernate.EmailStatus;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -13,7 +16,7 @@ public class MailCreator {
     // этот класс формирует новые письма по заданному образцу
 
     // настройки для отправки писем:
-    private String recipient = "justme7053@gmail.com"; // получатель
+    private Email recipient = null; // получатель
     private String sender = "mail.java@yandex.ru"; // отправитель
     private String host = "smtp.yandex.ru"; // почтовый сервер
     private static Properties properties = System.getProperties(); // шаблон настроек для соединения
@@ -30,10 +33,14 @@ public class MailCreator {
     public MailCreator() {
     }
 
-    public MailCreator(String recipient, String sender, String host) {
+    public MailCreator(Email recipient, String sender, String host) {
         this.recipient = recipient;
         this.sender = sender;
         this.host = host;
+    }
+
+    public MailCreator(Email recipient) {
+        this.recipient = recipient;
     }
 
     // главный метод класса - создали сессию, написали письмо, отправили письмо
@@ -77,7 +84,7 @@ public class MailCreator {
 
             // задаем отправителя и получателя
             message.setFrom(new InternetAddress(sender));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient.getAddress()));
 
             // указываем тему и тело письма
             message.setSubject("You winned 2 tickets to Fhloston paradise!");
@@ -93,22 +100,24 @@ public class MailCreator {
     }
 
     // этот метод принимает готовое сообщение и отправляет его адресату
+    // попутно меняем статус емайла в БД - в зависимости от результата отправки
     private boolean sendEmail(Message msg) {
 
         try {
             Transport.send(msg);
             System.out.println("\nСообщение на адрес "+ recipient + " успешно отправлено.");
-
+            recipient.setStatus(EmailStatus.Successful);
             return true;
 
         } catch (MessagingException e) {
             System.out.println("\nОшибка при отправке сообщения на адрес " + recipient);
+            recipient.setStatus(EmailStatus.Error);
             e.printStackTrace();
             return false;
         }
     }
 
-    public String getRecipient() {
+    public Email getRecipient() {
         return recipient;
     }
 
@@ -124,7 +133,7 @@ public class MailCreator {
         return properties;
     }
 
-    public void setRecipient(String recipient) {
+    public void setRecipient(Email recipient) {
         this.recipient = recipient;
     }
 

@@ -1,7 +1,9 @@
 package model;
 
 import controller.EmailService;
+import model.emails.MailCreator;
 import model.emails.classes4hibernate.Email;
+import model.emails.classes4hibernate.EmailStatus;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -38,6 +40,8 @@ public class UrlParser {
         mainUrl = checkUrl(url);
         getUrls();
         getEmails();
+        uploadToDB(emails);
+        sendMail(emails);
     }
 
 
@@ -143,7 +147,6 @@ public class UrlParser {
         }
 
         System.out.println("Удалено " + delRepeats + " повторов.\n");
-        uploadToDB(emails);
         return emails;
     }
 
@@ -168,13 +171,25 @@ public class UrlParser {
     }
 
     public static void uploadToDB(List<Email> emails) {
-        System.out.println("\nЗагружаю почтовые адреса в базу данных...");
+        System.out.println("\nЗагружаю почтовые адреса в базу данных...\n");
 
         for (Email eml : emails) {
             service.saveEntry(eml);
         }
 
         System.out.println("\nЗагрузка завершена.");
+    }
+
+    public static void sendMail(List<Email> emails) {
+        System.out.println("\nНачинаю рассылку...");
+
+        for (Email eml : emails) {
+            eml.setStatus(EmailStatus.Sending);
+            MailCreator creator = new MailCreator(eml);
+            creator.makeAndSend();
+        }
+
+        System.out.println("\nРассылка завершена.");
     }
 }
 

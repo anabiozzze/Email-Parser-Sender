@@ -1,7 +1,7 @@
 import model.UrlParser;
 
 public class Main {
-    public static String mainUrl = "https://www.bspb.ru/career/jobs/spb/contactnji-center/";
+    public static String mainUrl = "https://parsertest.ru.gg/";
 
     /*
      * view - GUI программы, анимация ожидания

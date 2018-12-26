@@ -1,9 +1,4 @@
-import controller.EmailService;
-import controller.dao.DAOImpl;
 import model.emails.MailCreator;
-import model.emails.classes4hibernate.Email;
-
-import java.util.List;
 
 public class Test {
     public static String mainUrl = "http://www.vodokanal.spb.ru/o_kompanii/kontakty/";
