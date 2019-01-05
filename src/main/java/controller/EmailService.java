@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class EmailService extends DAOImpl{
+    // класс проводит все необходимые операции с емайлами в БД; используется классом UrlParser
 
     @Override
     // сохраняем в БД новую строку

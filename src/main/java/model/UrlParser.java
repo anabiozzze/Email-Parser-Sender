@@ -36,12 +36,15 @@ public class UrlParser {
     public UrlParser() {
     }
 
+    public static List<Email> getEmails() {
+        return emails;
+    }
+
     public static void startParse(String url) {
         mainUrl = checkUrl(url);
         getUrls();
-        getEmails();
+        findEmails();
         uploadToDB(emails);
-        sendMail(emails);
     }
 
 
@@ -118,7 +121,7 @@ public class UrlParser {
 
 
     // здесь собираем все емайлы из основной страницы и её дочерних ссылок и складываем мэйлы в список
-    private static List<Email> getEmails() {
+    private static List<Email> findEmails() {
 
         System.out.println("\nСобираю почтовые адреса...\n");
 
@@ -180,7 +183,7 @@ public class UrlParser {
         System.out.println("\nЗагрузка завершена.");
     }
 
-    public static void sendMail(List<Email> emails) {
+    public static void sendMail() {
         System.out.println("\nНачинаю рассылку...");
 
         for (Email eml : emails) {
