@@ -183,13 +183,13 @@ public class UrlParser {
         System.out.println("\nЗагрузка завершена.");
     }
 
-    public static void sendMail() {
+    public static void sendMail(String letter, String topic, String pass) {
         System.out.println("\nНачинаю рассылку...");
 
         for (Email eml : emails) {
             eml.setStatus(EmailStatus.Sending);
             MailCreator creator = new MailCreator(eml);
-            creator.makeAndSend();
+            creator.makeAndSend(letter, topic, pass);
         }
 
         System.out.println("\nРассылка завершена.");

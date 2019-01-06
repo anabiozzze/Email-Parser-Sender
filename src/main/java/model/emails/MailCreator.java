@@ -44,13 +44,13 @@ public class MailCreator {
     }
 
     // главный метод класса - создали сессию, написали письмо, отправили письмо
-    public void makeAndSend() {
-        getSession();
-        sendEmail(createMail());
+    public void makeAndSend(String letter, String topic, String pass) {
+        getSession(pass);
+        sendEmail(createMail(letter, topic));
     }
 
     // для каждого письма создается отдельная сессия, включающая все необходимые настройки
-    private Session getSession() {
+    private Session getSession(String pass) {
         properties.setProperty("mail.smtp.host", host); // прописываем наш сервер
         properties.setProperty("mail.smtp.socketFactory.class", SSL_FACTORY); // указываем непонятную фабрику
         properties.setProperty("mail.smtp.port", "465"); // меняем порт, по умолчанию был 25й, на нем не взлетело
@@ -58,24 +58,16 @@ public class MailCreator {
         properties.put("mail.smtp.auth", "true"); // просим у сервера авторизацию; без нее логин\пароль не примет
         properties.put("mail.debug", "true"); // включаем дебаггер - вывод в консоль всей инфы по подключению
 
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Введите пароль вашей учетной записи:");
-            password = reader.readLine();
-            session = Session.getInstance(properties, new Authenticator() {
+        password = pass;
+        session = Session.getInstance(properties, new Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(username, password);}});
-
-            return session;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         return session;
     }
 
     // здесь мы создаем само сообщение для отправки
-    private Message createMail() {
+    private Message createMail(String letter, String topic) {
         // формируем шаблон сообщения по стандарту передачи MIME - т.е. несколько объектов
         // в рамках одного сообщения, возможность вложенности одного объекта в другой и тд.
         Message message = null;
@@ -87,10 +79,8 @@ public class MailCreator {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient.getAddress()));
 
             // указываем тему и тело письма
-            message.setSubject("You winned 2 tickets to Fhloston paradise!");
-            ((MimeMessage) message).setText("Mr. Korben Dallas! \n" + "Congratulations, " +
-                    "you have just become the winner of our lottery! Two tickets to Fhloston paradise " +
-                    "are waiting for you!\n");
+            message.setSubject(topic);
+            ((MimeMessage) message).setText(letter);
 
         } catch (MessagingException e) {
             e.printStackTrace();

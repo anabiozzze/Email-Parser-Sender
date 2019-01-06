@@ -30,8 +30,8 @@ public class Controller {
         return result;
     }
 
-    public void sendMail(){
-        parser.sendMail();
+    public void sendMail(String letter, String topic, String pass){
+        parser.sendMail(letter, topic, pass);
     }
 
 }
