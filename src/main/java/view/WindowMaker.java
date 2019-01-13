@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public abstract class WindowMaker {
+    // класс с общей логикой формирования нового диалогового окна для классов Confirmer и  Informer
 
     public static Controller controller = new Controller();
 

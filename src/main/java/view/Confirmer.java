@@ -1,6 +1,5 @@
 package view;
 
-import controller.Controller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -12,22 +11,32 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Confirmer extends WindowMaker {
-    // этот класс выводит окно с подтверждением действия (начать рассылку)
+    // этот класс выводит окно с подтверждением действия (начать рассылку) и передает данные дальше в контроллер
+
+    private static final Logger logger = LoggerFactory.getLogger(Confirmer.class.getName());
 
     private String letter;
-    private String topic;
+    private String subject;
     private String pass;
+    protected static boolean isDone = false;
 
 
-    public Confirmer(String letter, String topic) {
+    public Confirmer(String letter, String subject) {
+        logger.debug("New Confirmer created with parameters: " + "letter: " + letter + ", subject: " + subject);
+
         this.letter = letter;
-        this.topic = topic;
+        this.subject = subject;
     }
 
     // открываем новое окно с двумя кнопками "Да\Нет"
     public void showWindow() {
+
+        logger.debug("Method showWindow() started;");
+
         Stage stage = new Stage();
         Group group = new Group();
         BorderPane pane = new BorderPane();
@@ -54,17 +63,27 @@ public class Confirmer extends WindowMaker {
 
         btn_yes.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
+
+                logger.debug("btn_yes is clicked;");
+
                 pass = passField.getText();
-                controller.sendMail(letter, topic, pass);
+                controller.sendMail(letter, subject, pass);
                 Stage stage = (Stage) btn_no.getScene().getWindow();
                 stage.close();
+
+                isDone = true;
             }
         });
 
         btn_no.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
+
+                logger.debug("btn_no is clicked;");
+
                 Stage stage = (Stage) btn_no.getScene().getWindow();
                 stage.close();
+
+                isDone = true;
             }
         });
 
@@ -81,6 +100,8 @@ public class Confirmer extends WindowMaker {
         group.getChildren().add(pane);
 
         stage.show();
+
+        logger.debug("Method showWindow() finished;");
     }
 
 }

@@ -11,8 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class EmailService extends DAOImpl{
     // класс проводит все необходимые операции с емайлами в БД; используется классом UrlParser
+
+    private static final Logger logger = LoggerFactory.getLogger(EmailService.class.getName());
 
     @Override
     // сохраняем в БД новую строку
@@ -78,11 +83,16 @@ public class EmailService extends DAOImpl{
     @Transactional
     // удаляем все записи в таблице БД
     public void delAll() {
+
+        logger.debug("Method delAll() started;");
+
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Query query = session.createQuery("delete from Email");
 
         Transaction tx = session.beginTransaction();
         query.executeUpdate();
         tx.commit();
+
+        logger.debug("Method delAll() finished;"  + "\n");
     }
 }

@@ -17,9 +17,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -30,18 +31,24 @@ public class MainView extends Application {
     /* Класс отвечвет за все элементы интерфейса программы и их расположение
      *  Класс не обращается напрямую к БД или другим классам, делая это через конроллер */
 
+    private static final Logger logger = LoggerFactory.getLogger(MainView.class.getName());
+
+
     private Controller controller = new Controller();
+    private Confirmer confirmer;
 
     private Scene scene; // наше окно, на котором будут располагаться все прочие элементы
     private Group group; // основной контейнер с координатами 0.0 по размеру окна
-    protected static BorderPane pane; // второй контейнер - в нем будут лежать все графические элементы
+    protected volatile static BorderPane pane; // второй контейнер - в нем будут лежать все графические элементы
 
     private TextField fieldUrls; // текстовое поле для ввода ссылок
     private HTMLEditor fieldLetter; // текстовое поле для ввода текста письма
-    private TextField fieldTopic; // текстовое поле для темы письма
+    private TextField fieldSubject; // текстовое поле для темы письма
     private VBox vBox;
     private HBox hBox;
-    private HBox hb;
+    private static HBox hb;
+
+    protected volatile static boolean isStarted = false;
 
 
     // нам потребуются:
@@ -49,11 +56,12 @@ public class MainView extends Application {
     // большое текстовое поле для ввода текста письма
     // кнопка "найти почтовые адреса"
     // кнопка "отправить письма"
-    // анимация загрузки справа
-
+    // анимация загрузки
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        logger.debug("Method 'start' started;");
 
         // задаем размер и цвет окна и основной области, на которой будем располагать элементы
         group = new Group();
@@ -81,21 +89,57 @@ public class MainView extends Application {
 
         primaryStage.show();
 
+        /*
+        этот процесс всегда следит за состоянием гифки, которая открывается во время ожидания
+        выполнения основных операций. Его задача - закрывать гифку, когда ожидание окончено.
+        таймера в 2 секунды достаточно для любой операции программы.
+        */
 
+        Runnable task = () -> {
+
+            while (true) {
+                if (Confirmer.isDone) {
+                    System.out.println("confirm");
+
+                    Platform.runLater(() ->
+                            closeGif());
+                    Confirmer.isDone = false;
+                }
+
+                 if (isStarted){
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    Platform.runLater(() ->
+                            closeGif());
+                }
+            }
+        };
+
+        Thread thread = new Thread(task);
+        thread.setDaemon(true);
+        thread.start();
+
+        logger.debug("Method 'start' finished: GUI is ready;");
     }
 
     private void addTextFields() {
+        logger.debug("Method 'addTextFields' started;");
+
         fieldUrls = new TextField();
         fieldUrls.setMinSize(600, 50);
         fieldUrls.setStyle("-fx-background-color: snow");
 
         fieldUrls.setPromptText("Введите ссылки для поиска почтовых адресов:");
 
-        fieldTopic = new TextField();
-        fieldTopic.setMinSize(600, 30);
-        fieldTopic.setStyle("-fx-background-color: snow");
+        fieldSubject = new TextField();
+        fieldSubject.setMinSize(600, 30);
+        fieldSubject.setStyle("-fx-background-color: snow");
 
-        fieldTopic.setPromptText("Введите тему письма:");
+        fieldSubject.setPromptText("Введите тему письма:");
 
         fieldLetter = new HTMLEditor();
         fieldLetter.setMinSize(600, 200);
@@ -103,11 +147,14 @@ public class MainView extends Application {
         fieldLetter.setStyle("-fx-background-color: lightblue");
 
         vBox = new VBox();
-        vBox.getChildren().addAll(fieldUrls, fieldTopic, fieldLetter);
+        vBox.getChildren().addAll(fieldUrls, fieldSubject, fieldLetter);
 
+        logger.debug("Method 'addTextFields' finished: TextFields is ready;");
     }
 
     private void addButtons() {
+        logger.debug("Method 'addButtons' started;");
+
         Button btn_find = new Button("найти почтовые адреса");
         Button btn_look = new Button("посмотреть найденные адреса");
         Button btn_send = new Button("отправить письма");
@@ -119,35 +166,31 @@ public class MainView extends Application {
             public void handle(ActionEvent event) {
                 // отправляет введенную пользователем ссылку в обработку, показывает гифку ожидания
 
-//                new Thread(new Runnable() {
-//                    public void run() {
-//                        Platform.runLater(new Runnable() {
-//                            public void run() {
-//                                showGif();
-//                            }
-//                        });
-//                    }
-//                }).start();
+                logger.debug("btn_find is clicked;");
 
-                String line = fieldUrls.getText();
-                List<String> urls = Arrays.asList(line.split("\n"));
+                Platform.runLater(() -> {
+                    showGif();
+                    isStarted = true;
+                    });
 
-                for (String str : urls) {
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    controller.startParse(str);
-                    System.out.println(str);
-                }
+                Platform.runLater(() -> {
+                        String line = fieldUrls.getText();
+                        List<String> urls = Arrays.asList(line.split("\n"));
 
+                        for (String str : urls) {
+                            controller.startParse(str);
+                            System.out.println(str);
+                        }
+                    });
             }
+
         });
 
         btn_look.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 // весь список найденных адресов нужно вывести в окне
+                logger.debug("btn_look is clicked;");
+
                 Informer informer = new Informer();
                 informer.showWindow();
 
@@ -157,17 +200,28 @@ public class MainView extends Application {
         btn_send.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 // сперва должно быть окно подтверждения
-                Confirmer confirmer = new Confirmer(getText(), fieldTopic.getText());
+
+                Platform.runLater(() -> {
+                    showGif();
+                });
+
+                logger.debug("btn_send is clicked;");
+
+                confirmer = new Confirmer(getText(), fieldSubject.getText());
                 confirmer.showWindow();
             }
         });
 
         hBox = new HBox();
         hBox.getChildren().addAll(btn_find, btn_look, btn_send);
+
+        logger.debug("Method 'addButtons' finished: buttons is ready;");
     }
 
 
     private void placeContainers() {
+        logger.debug("Method 'placeContainers' started;");
+
         vBox.setSpacing(10);
         BorderPane.setMargin(vBox, new Insets(10, 10,10, 10));
         pane.setTop(vBox);
@@ -176,21 +230,26 @@ public class MainView extends Application {
         BorderPane.setMargin(hBox, new Insets(0, 10,10, 10));
         pane.setBottom(hBox);
 
+        logger.debug("Method 'placeContainers' finished: all containers on the pane;");
     }
 
-    private void showGif() {
-        System.out.println("запускаю гифку");
+    protected void showGif() {
+        logger.debug("Method 'showGif' started;");
+
+        System.out.println("opening GIF...");
 
         File file = new File("/Users/andreimironov/Desktop/cat-preloader.gif");
 
         String localUrl = null;
         try {
             localUrl = file.toURI().toURL().toString();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+
+        } catch (Exception e) {
+            logger.error("Error creating url: " + e);
         }
 
-        Image image = new Image(localUrl, 200,200, false, true);
+
+        Image image = new Image(localUrl, 200,200, false, true, true);
         ImageView imageView = new ImageView(image);
 
         hb = new HBox();
@@ -200,15 +259,33 @@ public class MainView extends Application {
         hb.getChildren().add(imageView);
         HBox.setMargin(imageView, new Insets(300, 100, 60, 200));
         BorderPane.setMargin(hb, new Insets(0, 0,600, 0));
-        MainView.pane.setCenter(hb); // здесь заминка - гиф отображается только после выполнения всей программы
 
-        System.out.println("гифка запущена");
+        System.out.println("setting the pane");
+        pane.setCenter(hb);
+        System.out.println("GIF started");
 
+        logger.debug("GIF started;");
+    }
+
+    protected static void closeGif() {
+
+        Platform.runLater(() -> {
+
+        System.out.println("close gif");
+
+        pane.getChildren().remove(hb);
+
+        isStarted = false;
+        System.out.println("gif closed");
+        logger.debug("Method 'showGif' finished: GIF closed.");
+
+        });
     }
 
 
     // этот метод забирает из HTMLEditor'a введенный текст
     private String getText() {
+        logger.debug("Method 'getText' get started;");
 
         String htmlText = fieldLetter.getHtmlText();
 
@@ -228,9 +305,13 @@ public class MainView extends Application {
 
         result = text.toString().trim();
 
+        logger.debug("Method 'getText' finished;");
+
         return result;
     }
+
 }
+
 
 
 // https://parsertest.ru.gg/

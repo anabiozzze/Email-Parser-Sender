@@ -8,12 +8,20 @@ import javafx.stage.Stage;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Informer extends WindowMaker {
+
+    private static final Logger logger = LoggerFactory.getLogger(Informer.class.getName());
 
     public Informer() {
     }
 
     public void showWindow() {
+
+        logger.debug("Method 'showWindow()' started;");
+
         Stage stage = new Stage();
         Group group = new Group();
         ScrollPane pane = new ScrollPane();
@@ -40,5 +48,6 @@ public class Informer extends WindowMaker {
 
         stage.show();
 
+        logger.debug("Method 'showWindow()' finished;");
     }
 }
