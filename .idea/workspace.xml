@@ -4,39 +4,13 @@
     <list default="true" id="268629d5-9d09-49e0-b7f2-a75163c8598d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dao/DAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/dao/DAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dao/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/dao/HibernateSessionFactoryUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/UrlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/UrlParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/emails/MailCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/emails/MailCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Confirmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Confirmer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GifStarter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Informer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Informer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/WindowMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/WindowMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/EmailService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/dao/DAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/dao/DAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/dao/HibernateSessionFactoryUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/dao/HibernateSessionFactoryUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/UrlParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/UrlParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/emails/MailCreator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/emails/MailCreator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/emails/MailCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/emails/MailCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Confirmer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Confirmer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Confirmer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Confirmer$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Confirmer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Confirmer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GifStarter$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GifStarter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Informer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Informer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/MainView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainView$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/MainView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainView$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/MainView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainView$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/WindowMaker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/WindowMaker$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/WindowMaker$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/WindowMaker$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/WindowMaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/WindowMaker.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -81,20 +55,22 @@
           <entry key="cell" value="10" />
           <entry key="dummy" value="2" />
           <entry key="fxml" value="4" />
-          <entry key="java" value="23717" />
+          <entry key="java" value="23763" />
+          <entry key="properties" value="199" />
           <entry key="sql" value="77" />
           <entry key="txt" value="22" />
-          <entry key="xml" value="150" />
+          <entry key="xml" value="160" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="23716" />
+          <entry key="JAVA" value="23762" />
           <entry key="PLAIN_TEXT" value="24" />
+          <entry key="Properties" value="199" />
           <entry key="RegExp" value="1" />
           <entry key="SQL" value="77" />
           <entry key="Scratch" value="10" />
-          <entry key="XML" value="154" />
+          <entry key="XML" value="164" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -102,23 +78,23 @@
           <entry key="class" value="9" />
           <entry key="contacts" value="9" />
           <entry key="fxml" value="2" />
-          <entry key="java" value="125" />
-          <entry key="properties" value="1" />
+          <entry key="java" value="126" />
+          <entry key="properties" value="2" />
           <entry key="sql" value="2" />
           <entry key="tld" value="2" />
           <entry key="urls" value="1" />
-          <entry key="xml" value="8" />
+          <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="9" />
           <entry key="Database Element" value="10" />
-          <entry key="JAVA" value="125" />
-          <entry key="Properties" value="1" />
+          <entry key="JAVA" value="126" />
+          <entry key="Properties" value="2" />
           <entry key="SQL" value="1" />
           <entry key="Scratch" value="1" />
-          <entry key="XML" value="12" />
+          <entry key="XML" value="13" />
         </counts>
       </usages-collector>
     </session>
@@ -128,15 +104,30 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="315" column="3" selection-start-line="315" selection-start-column="3" selection-end-line="315" selection-end-column="28" />
+            <state relative-caret-position="342">
+              <caret line="307" column="3" lean-forward="true" selection-start-line="307" selection-start-column="3" selection-end-line="307" selection-end-column="28" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#1839#1858#0" />
-                <element signature="method#addTextFields#0;class#MainView#0" />
-                <element signature="e#8512#8940#0" />
-                <element signature="e#9984#10269#0" />
-                <element signature="e#10276#10973#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="85" column="21" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -144,8 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/Confirmer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+            <state relative-caret-position="-815">
+              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -227,11 +218,11 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/dao/DAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/dao/HibernateSessionFactoryUtil.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/Confirmer.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/view/MainView.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
       </list>
     </option>
   </component>
@@ -311,7 +302,7 @@
     <property name="DatabaseDriversLRU" value="mysql&#10;postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547413188771" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547582826192" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -398,19 +389,18 @@
       <workItem from="1545334169156" duration="2274000" />
       <workItem from="1545396458277" duration="57062000" />
       <workItem from="1546703255561" duration="7206000" />
-      <workItem from="1546784301725" duration="57433000" />
+      <workItem from="1546784301725" duration="61326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144906000" />
+    <option name="totallyTimeSpent" value="148799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="813" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Persistence" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.22031474" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22031474" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -421,7 +411,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="1" weight="0.3295129" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.3295129" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.27507162" />
+      <window_info anchor="bottom" id="Run" order="4" visible="true" weight="0.27363896" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -568,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/GifStarter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -679,20 +662,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties.tld">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="86" column="75" selection-start-line="86" selection-start-column="75" selection-end-line="86" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -739,26 +708,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/Confirmer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        <state relative-caret-position="-815">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="85" column="21" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="315" column="3" selection-start-line="315" selection-start-column="3" selection-end-line="315" selection-end-column="28" />
+        <state relative-caret-position="342">
+          <caret line="307" column="3" lean-forward="true" selection-start-line="307" selection-start-column="3" selection-end-line="307" selection-end-column="28" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1839#1858#0" />
-            <element signature="method#addTextFields#0;class#MainView#0" />
-            <element signature="e#8512#8940#0" />
-            <element signature="e#9984#10269#0" />
-            <element signature="e#10276#10973#0" />
           </folding>
         </state>
       </provider>

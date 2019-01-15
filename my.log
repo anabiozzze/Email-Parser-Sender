@@ -1,0 +1,19 @@
+22:25:13,524 ERROR UrlParser:89 - Incorrect link entered: 
+22:25:41,566  INFO UrlParser:85 - The link entered is valid;
+22:25:42,672  INFO UrlParser:137 - Displaying child links: 
+22:25:42,803  INFO UrlParser:211 - Removed 0 repeats.
+
+22:25:42,994  INFO UrlParser:211 - Removed 1 repeats.
+
+22:25:43,081  INFO UrlParser:211 - Removed 1 repeats.
+
+22:25:43,150 ERROR UrlParser:171 - Error creating doc: org.jsoup.HttpStatusException: HTTP error fetching URL. Status=404, URL=https://parsertest.ru.gg//www.homepage-konstruktor.ru?utm_source=selfpromotion&utm_campaign=footer&utm_medium=footertextlink
+22:25:43,150  INFO UrlParser:211 - Removed 1 repeats.
+
+22:25:43,150  INFO UrlParser:216 - Uploading emails to the database...
+22:25:50,315  INFO HibernateSessionFactoryUtil:36 - SessionFactory created successfully;
+22:25:50,435  INFO UrlParser:222 - Uploading is done.
+22:26:13,943  INFO UrlParser:230 - 
+Start sending...
+22:26:35,701  INFO UrlParser:238 - 
+Sending is done.

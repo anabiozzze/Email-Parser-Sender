@@ -99,7 +99,6 @@ public class MainView extends Application {
 
             while (true) {
                 if (Confirmer.isDone) {
-                    System.out.println("confirm");
 
                     Platform.runLater(() ->
                             closeGif());
@@ -236,8 +235,6 @@ public class MainView extends Application {
     protected void showGif() {
         logger.debug("Method 'showGif' started;");
 
-        System.out.println("opening GIF...");
-
         File file = new File("/Users/andreimironov/Desktop/cat-preloader.gif");
 
         String localUrl = null;
@@ -260,9 +257,7 @@ public class MainView extends Application {
         HBox.setMargin(imageView, new Insets(300, 100, 60, 200));
         BorderPane.setMargin(hb, new Insets(0, 0,600, 0));
 
-        System.out.println("setting the pane");
         pane.setCenter(hb);
-        System.out.println("GIF started");
 
         logger.debug("GIF started;");
     }
@@ -270,13 +265,10 @@ public class MainView extends Application {
     protected static void closeGif() {
 
         Platform.runLater(() -> {
-
-        System.out.println("close gif");
-
         pane.getChildren().remove(hb);
 
         isStarted = false;
-        System.out.println("gif closed");
+
         logger.debug("Method 'showGif' finished: GIF closed.");
 
         });
@@ -309,7 +301,6 @@ public class MainView extends Application {
 
         return result;
     }
-
 }
 
 
