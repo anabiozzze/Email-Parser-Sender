@@ -19,6 +19,11 @@
 
 5. В конце работы программа пишет, сколько писем отправлено.
 
-![found](https://user-images.githubusercontent.com/36374796/62005472-89d36f00-b13c-11e9-8f72-0e2c080b3af4.png)
+Перед запуском:
 ![ready](https://user-images.githubusercontent.com/36374796/62005457-50026880-b13c-11e9-85f4-c371ecef78d3.png)
+
+Обнаружены почтовые адреса:
+![found](https://user-images.githubusercontent.com/36374796/62005472-89d36f00-b13c-11e9-8f72-0e2c080b3af4.png)
+
+Отправка писем.
 ![sending](https://user-images.githubusercontent.com/36374796/62005458-509aff00-b13c-11e9-8079-375214a5d9b8.png)
